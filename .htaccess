@@ -1,0 +1,6 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^bender\-exports\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.bender\-exports\.com$
+RewriteRule ^/?$ "https\:\/\/www\.bender\-exports\.com\/" [R=301,L]
+
