@@ -130,14 +130,6 @@
         }
     });
 
-    // Parallax Effect for Carousel Images
-    $(window).scroll(function() {
-        var scrolled = $(window).scrollTop();
-        var parallax = $('.carousel-item img');
-        var speed = scrolled * 0.5;
-        parallax.css('transform', 'translateY(' + speed + 'px)');
-    });
-
     // Smooth Scroll for Anchor Links
     $('a[href*="#"]:not([href="#"])').click(function() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -240,30 +232,6 @@
             `)
             .appendTo('head');
     }
-
-    // Add scroll progress indicator
-    $(window).scroll(function() {
-        var scrollTop = $(window).scrollTop();
-        var docHeight = $(document).height() - $(window).height();
-        var scrollPercent = (scrollTop / docHeight) * 100;
-        
-        if (!$('#scroll-progress').length) {
-            $('body').append('<div id="scroll-progress"></div>');
-            $('#scroll-progress').css({
-                'position': 'fixed',
-                'top': '0',
-                'left': '0',
-                'width': '0%',
-                'height': '4px',
-                'background': 'linear-gradient(135deg, #34AD54 0%, #06A3DA 100%)',
-                'z-index': '9999',
-                'transition': 'width 0.1s ease-out',
-                'box-shadow': '0 2px 10px rgba(52, 173, 84, 0.5)'
-            });
-        }
-        
-        $('#scroll-progress').css('width', scrollPercent + '%');
-    });
 
     // Add typing effect to hero text (optional)
     function typeWriter(element, text, speed = 100) {
